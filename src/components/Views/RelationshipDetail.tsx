@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { 
   User, 
   Mail, 
@@ -21,7 +21,7 @@ interface RelationshipDetailProps {
   onBack: () => void;
 }
 
-export const RelationshipDetail: React.FC<RelationshipDetailProps> = ({ 
+export const RelationshipDetail: FC<RelationshipDetailProps> = ({
   relationshipId, 
   onBack 
 }) => {

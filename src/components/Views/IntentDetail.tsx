@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { type FC, useEffect, useState } from 'react';
 import { 
   Target, 
   ArrowLeft,
@@ -7,8 +7,6 @@ import {
   DollarSign,
   Calendar,
   TrendingUp,
-  User,
-  Building,
   Zap,
   Clock,
   AlertTriangle,
@@ -27,7 +25,7 @@ interface IntentDetailProps {
   onBack: () => void;
 }
 
-export const IntentDetail: React.FC<IntentDetailProps> = ({ 
+export const IntentDetail: FC<IntentDetailProps> = ({
   intentId, 
   onBack 
 }) => {
@@ -391,7 +389,6 @@ export const IntentDetail: React.FC<IntentDetailProps> = ({
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Stage Progress</h3>
             <div className="space-y-3">
               {['discovery', 'qualification', 'proposal', 'negotiation', 'closed-won'].map((stage, index) => {
-                const isActive = intent.stage === stage;
                 const isPassed = ['discovery', 'qualification', 'proposal', 'negotiation'].indexOf(intent.stage) > index;
                 const isCurrent = intent.stage === stage;
                 

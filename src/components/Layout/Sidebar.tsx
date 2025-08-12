@@ -1,10 +1,9 @@
-import React from 'react';
-import { 
-  Home, 
-  Users, 
-  Target, 
-  MessageCircle, 
-  BarChart3, 
+import { type FC } from 'react';
+import {
+  Home,
+  Users,
+  Target,
+  MessageCircle,
   Zap,
   Calendar,
   TrendingUp
@@ -25,7 +24,7 @@ const navigationItems = [
   { id: 'analytics', label: 'Analytics', icon: TrendingUp },
 ];
 
-export const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange }) => {
+export const Sidebar: FC<SidebarProps> = ({ activeView, onViewChange }) => {
   return (
     <aside className="w-64 bg-white border-r border-gray-200 px-4 py-6">
       <nav className="space-y-2">
