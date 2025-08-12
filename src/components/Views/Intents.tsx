@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { type FC, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { IntentDetail } from './IntentDetail';
 import { 
@@ -9,7 +9,6 @@ import {
   Clock,
   DollarSign,
   AlertTriangle,
-  CheckCircle,
   ArrowRight,
   Zap
 } from 'lucide-react';
@@ -20,7 +19,7 @@ interface IntentCardProps {
   onSelect: (intent: Intent) => void;
 }
 
-const IntentCard: React.FC<IntentCardProps> = ({ intent, onSelect }) => {
+const IntentCard: FC<IntentCardProps> = ({ intent, onSelect }) => {
   const getStageColor = (stage: string) => {
     const colors = {
       'discovery': 'bg-blue-100 text-blue-800 border-blue-200',
@@ -121,7 +120,7 @@ const IntentCard: React.FC<IntentCardProps> = ({ intent, onSelect }) => {
   );
 };
 
-export const Intents: React.FC = () => {
+export const Intents: FC = () => {
   const [selectedStage, setSelectedStage] = useState('all');
   const [selectedPriority, setSelectedPriority] = useState('all');
   const [selectedIntentId, setSelectedIntentId] = useState<string | null>(null);

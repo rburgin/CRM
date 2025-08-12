@@ -1,8 +1,8 @@
-import React from 'react';
-import { 
-  TrendingUp, 
-  Users, 
-  Target, 
+import { type ElementType, type FC } from 'react';
+import {
+  TrendingUp,
+  Users,
+  Target,
   DollarSign,
   ArrowUpRight,
   Clock,
@@ -16,10 +16,10 @@ interface MetricCardProps {
   value: string;
   change: string;
   changeType: 'positive' | 'negative' | 'neutral';
-  icon: React.ElementType;
+  icon: ElementType;
 }
 
-const MetricCard: React.FC<MetricCardProps> = ({ title, value, change, changeType, icon: Icon }) => {
+const MetricCard: FC<MetricCardProps> = ({ title, value, change, changeType, icon: Icon }) => {
   const changeColor = {
     positive: 'text-green-600',
     negative: 'text-red-600',
@@ -43,6 +43,7 @@ const MetricCard: React.FC<MetricCardProps> = ({ title, value, change, changeTyp
   );
 };
 
+
 interface UrgentActionProps {
   action: {
     type: string;
@@ -53,7 +54,7 @@ interface UrgentActionProps {
   };
 }
 
-const UrgentActionCard: React.FC<UrgentActionProps> = ({ action }) => {
+const UrgentActionCard: FC<UrgentActionProps> = ({ action }) => {
   const getActionColor = (type: string) => {
     const colors = {
       call: 'bg-green-50 text-green-700 border-green-200',
@@ -87,7 +88,7 @@ const UrgentActionCard: React.FC<UrgentActionProps> = ({ action }) => {
   );
 };
 
-export const Dashboard: React.FC = () => {
+export const Dashboard: FC = () => {
   const metrics: DashboardMetrics = {
     totalIntents: 87,
     pipelineValue: 1250000,

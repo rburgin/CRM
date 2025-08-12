@@ -1,11 +1,11 @@
-import React from 'react';
+import { type FC } from 'react';
 import { Search, Bell, Settings, User, Zap } from 'lucide-react';
 
 interface HeaderProps {
   onSearchFocus?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onSearchFocus }) => {
+export const Header: FC<HeaderProps> = ({ onSearchFocus }) => {
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
       {/* Logo and Title */}

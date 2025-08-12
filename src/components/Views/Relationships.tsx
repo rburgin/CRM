@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import { type FC, useState } from 'react';
 import { RelationshipDetail } from './RelationshipDetail';
 import { 
   Search, 
-  Filter, 
-  Plus, 
-  Mail, 
-  Phone, 
+  Filter,
+  Plus,
+  Mail,
+  Phone,
   Building,
-  TrendingUp,
-  Star,
   MoreHorizontal,
   Zap
 } from 'lucide-react';
@@ -19,7 +17,7 @@ interface RelationshipCardProps {
   onSelect: (relationship: Relationship) => void;
 }
 
-const RelationshipCard: React.FC<RelationshipCardProps> = ({ relationship, onSelect }) => {
+const RelationshipCard: FC<RelationshipCardProps> = ({ relationship, onSelect }) => {
   const getPropensityColor = (score: number) => {
     if (score >= 0.8) return 'text-green-600 bg-green-50 border-green-200';
     if (score >= 0.6) return 'text-yellow-600 bg-yellow-50 border-yellow-200';
@@ -98,7 +96,7 @@ const RelationshipCard: React.FC<RelationshipCardProps> = ({ relationship, onSel
   );
 };
 
-export const Relationships: React.FC = () => {
+export const Relationships: FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [selectedRelationshipId, setSelectedRelationshipId] = useState<string | null>(null);
